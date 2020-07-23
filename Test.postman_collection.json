@@ -1,0 +1,451 @@
+{
+	"info": {
+		"_postman_id": "cc318af8-df5c-4263-8e3b-75a91d9476aa",
+		"name": "Test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Token",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "ZverFun1",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "12345678",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://104.40.150.146/token",
+					"protocol": "http",
+					"host": [
+						"104",
+						"40",
+						"150",
+						"146"
+					],
+					"path": [
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetInformationAboutMe",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "e8c7b7a9-9de2-4280-9cf1-0ee0716a5ae4",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Response time is less than 200ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(500);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "104.40.150.146/api/me",
+					"host": [
+						"104",
+						"40",
+						"150",
+						"146"
+					],
+					"path": [
+						"api",
+						"me"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateInformationAboutUser",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "5042b7b4-c6ef-4f6a-a946-f70f55208152",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Response time is less than 200ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(500);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"Login\": \"ZverFun\",\r\n  \"NativeName\": \"NikNizhegorodtcev\",\r\n  \"OldPassword\": \"12345678\",\r\n  \"Password\": \"12345678\",\r\n  \"ConfirmPassword\": \"12345678\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "104.40.150.146/api/user/c759961edcd6465491129dff2b146586",
+					"host": [
+						"104",
+						"40",
+						"150",
+						"146"
+					],
+					"path": [
+						"api",
+						"user",
+						"c759961edcd6465491129dff2b146586"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetInformationAboutAnyUser",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "64fc937c-d474-4b74-a6ce-cf2dc6945b90",
+						"exec": [
+							"pm.test(\"Response time is less than 200ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(500);\r",
+							"});\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "104.40.150.146/api/user/6b0d2192e4a34a57a0b95201e951b761",
+					"host": [
+						"104",
+						"40",
+						"150",
+						"146"
+					],
+					"path": [
+						"api",
+						"user",
+						"6b0d2192e4a34a57a0b95201e951b761"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetAllMap",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "8d3634c2-9aae-414c-a9d9-67a59491b404",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Response time is less than 200ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(500);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://104.40.150.146/api/map",
+					"protocol": "http",
+					"host": [
+						"104",
+						"40",
+						"150",
+						"146"
+					],
+					"path": [
+						"api",
+						"map"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "StartGame",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "cd0dd70b-2ead-4695-a47d-d38e8319ab12",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Response time is less than 200ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(500);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"Name\": \"new\",\r\n  \"MapId\": \"11dd1f65345d415cb2598bbcbc3fc6c0\",\r\n  \"SwitchTimeout\": 0,\r\n  \"StartupTeamLives\": 0,\r\n  \"PoliceSpeed\": 0,\r\n  \"ThiefSpeed\": 0\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://104.40.150.146/api/game",
+					"protocol": "http",
+					"host": [
+						"104",
+						"40",
+						"150",
+						"146"
+					],
+					"path": [
+						"api",
+						"game"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetAllGames",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "f1b49038-61a2-43f7-9e33-315bd2cf7323",
+						"exec": [
+							"pm.test(\"Response time is less than 200ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(500);\r",
+							"});\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://104.40.150.146/api/game",
+					"protocol": "http",
+					"host": [
+						"104",
+						"40",
+						"150",
+						"146"
+					],
+					"path": [
+						"api",
+						"game"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteGame",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "c665bd23-bd04-4bea-a89e-d023ae8d35ff",
+						"exec": [
+							"pm.test(\"Response time is less than 200ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(600);\r",
+							"});\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(204);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://104.40.150.146/api/game/c759961edcd6465491129dff2b146586",
+					"protocol": "http",
+					"host": [
+						"104",
+						"40",
+						"150",
+						"146"
+					],
+					"path": [
+						"api",
+						"game",
+						"c759961edcd6465491129dff2b146586"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ShowAllMaps",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "b5626a76-b60b-47ed-92c4-062c0aff221e",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Response time is less than 200ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(500);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "104.40.150.146/api/maps",
+					"host": [
+						"104",
+						"40",
+						"150",
+						"146"
+					],
+					"path": [
+						"api",
+						"maps"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ShowAllMapsOfUser",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "94c84f16-90eb-4b06-b09e-7dd1a6d4b007",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Response time is less than 200ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(500);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "104.40.150.146/api/maps",
+					"host": [
+						"104",
+						"40",
+						"150",
+						"146"
+					],
+					"path": [
+						"api",
+						"maps"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "AQAAANCMnd8BFdERjHoAwE_Cl-sBAAAAAZ-KQx9Y8kGFX7ItjR4uNgAAAAACAAAAAAAQZgAAAAEAACAAAAD9rmXnfyOnYGMzEPfUHO7ryNumWNMffQ_vDLkPOEVf9gAAAAAOgAAAAAIAACAAAADpoEypGhFOIatACpXxI-XCCp3DZWVipA7sWXa4wTyVvRABAADsG9VPi9zSNI7S2UOLqKTe0rJmh_MshSUhq8u6nXwpoVtLC0MQBWtez8GeeR7O68s4mGKtJq2X3nEqmxijCbH-URQcZDD7B-Jdt2blNvp9tQztMB5rqPIHntfEDu4CBoaHtcBw7K8ZyjpZaVsHuE6SKcaX4pYpqsJkQrYNvXaZIz4d7pi9tybQOpvetRok7eZBNsS-C7eV4dfTopPPff6rzT1tfAMWRVVfHQ_Z5As9gA-SIYkrmjOZHszgWcAx5U6JA6IklubbyP9YjBwoUnDLrBmnzZ6u3vTNSLyDizmENqMGAqOPULGl3m7B6xd5QHnMPYY4RVyscfhPecaGLaozhh2iEAVb8ZknqJwk2ETJ9UAAAACetNx7ea7DlbaBAC9WleEuKFSFJ5cHnR5V_svhaRYODVXxbko0hHVBy9L4wKw9feFMM6mwoXpvdbcSWl9nsPX9",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "33b3b7ac-3b61-423c-86f0-739493c8d34a",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "3b04548b-1ba3-4eeb-bed0-30223804a58d",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
